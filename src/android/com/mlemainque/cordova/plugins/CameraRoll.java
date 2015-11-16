@@ -67,7 +67,10 @@ public class CameraRoll extends CordovaPlugin {
 					MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
 					new String[] {
 						MediaStore.Images.Media.DATA
-					}
+					},
+					null,
+					null,
+					MediaStore.Images.Media.DATE_MODIFIED + " ASC"
 				);
 
 				while (cursor.moveToNext()) {
