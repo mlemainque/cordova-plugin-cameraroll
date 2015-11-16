@@ -2,11 +2,11 @@ var exec = require('cordova/exec');
 
 var cameraRoll = {};
 
-cameraRoll.getPhotos = function(successCallback, errorCallback, options) {
+cameraRoll.getPhotos = function(successCallback, errorCallback) {
   exec(successCallback, errorCallback, "CameraRoll", "getPhotos", []);
 };
 
-cameraRoll.saveToCameraRoll = function(imageBase64, successCallback, errorCallback, options) {
+cameraRoll.saveToCameraRoll = function(imageBase64, successCallback, errorCallback) {
   exec(successCallback, errorCallback, "CameraRoll", "saveToCameraRoll", [imageBase64]);
 };
 
