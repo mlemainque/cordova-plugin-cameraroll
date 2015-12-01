@@ -62,7 +62,7 @@ public class CameraRoll extends CordovaPlugin {
 
 				// We discover every video / photo stored on the phone and ask the _data field, which is the full
 				// path of the file
-				discover(MediaStore.Video.Media.query(
+				discover(MediaStore.Video.query(
 					webView.getContext().getContentResolver(),
 					MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
 					new String[] {
