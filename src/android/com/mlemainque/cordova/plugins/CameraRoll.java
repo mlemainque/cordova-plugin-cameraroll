@@ -85,7 +85,7 @@ public class CameraRoll extends CordovaPlugin {
 
 			}
 
-			public discover(Cursor cursor) {
+			private void discover(Cursor cursor) {
 				while (cursor.moveToNext()) {
 					for (int i = 0; i < cursor.getColumnCount(); i++) {
 						if (cursor.getColumnName(i).equals("_data")) {
