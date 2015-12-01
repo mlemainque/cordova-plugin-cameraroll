@@ -60,9 +60,19 @@ public class CameraRoll extends CordovaPlugin {
 			@Override
 			public void run() {
 
-				// We discover every photo stored on the phone and ask the _data field, which is the full
+				// We discover every video / photo stored on the phone and ask the _data field, which is the full
 				// path of the file
-				Cursor cursor = MediaStore.Images.Media.query(
+				discover(MediaStore.Video.Media.query(
+					webView.getContext().getContentResolver(),
+					MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
+					new String[] {
+						MediaStore.Video.Media.DATA
+					},
+					null,
+					null,
+					MediaStore.Video.Media.DATE_MODIFIED + " ASC"
+				));
+				discover(MediaStore.Images.Media.query(
 					webView.getContext().getContentResolver(),
 					MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
 					new String[] {
@@ -71,8 +81,11 @@ public class CameraRoll extends CordovaPlugin {
 					null,
 					null,
 					MediaStore.Images.Media.DATE_MODIFIED + " ASC"
-				);
+				));
 
+			}
+
+			public discover(Cursor cursor) {
 				while (cursor.moveToNext()) {
 					for (int i = 0; i < cursor.getColumnCount(); i++) {
 						if (cursor.getColumnName(i).equals("_data")) {
@@ -87,8 +100,8 @@ public class CameraRoll extends CordovaPlugin {
 						}
 					}
 				}
-
 			}
+
 		});
 	}
 
