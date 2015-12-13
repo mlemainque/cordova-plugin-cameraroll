@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cordova-plugin-cameraroll by mlemainque</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Cordova-plugin-cameraroll</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/mlemainque/cordova-plugin-cameraroll">View the Project on GitHub <small>mlemainque/cordova-plugin-cameraroll</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mlemainque/cordova-plugin-cameraroll/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mlemainque/cordova-plugin-cameraroll/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mlemainque/cordova-plugin-cameraroll">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="cordova-plugin-camera-roll" class="anchor" href="#cordova-plugin-camera-roll" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cordova Plugin Camera Roll</h1>
+
+<h2>
+<a id="what-is-this-plugin-for" class="anchor" href="#what-is-this-plugin-for" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is this plugin for?</h2>
+
+<p>This cordova plugin allows to browse the phone's gallery and discovers every photos and videos.</p>
+
+<p>This is a fork from <a href="https://github.com/driftyco/cordova-camera-roll">this</a> repository which contains the iOS implementation. The Android implementation is based on <a href="https://github.com/athieriot/cordova-media-discoverer-plugin">this</a> other repository.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>With cordova:</p>
+
+<pre><code>$ cordova plugin add https://github.com/mlemainque/cordova-plugin-cameraroll
+</code></pre>
+
+<h2>
+<a id="camerarollgetphotos" class="anchor" href="#camerarollgetphotos" aria-hidden="true"><span class="octicon octicon-link"></span></a>CameraRoll.getPhotos</h2>
+
+<pre><code>window.cordova.plugins.CameraRoll.getPhotos(callback, [errorCallback]);
+</code></pre>
+
+<h3>
+<a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h3>
+
+<ul>
+<li>
+<strong>callback</strong>: The callback that is called for each file found</li>
+<li>
+<strong>errorCallback</strong>: (Optional) The error callback</li>
+</ul>
+
+<h3>
+<a id="exemple" class="anchor" href="#exemple" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemple</h3>
+
+<pre><code>window.cordova.plugins.CameraRoll.getPhotos(function(URI) {
+  // Do something ...
+}, function(err) {
+  console.log(err);
+});
+</code></pre>
+
+<h3>
+<a id="supported-platforms" class="anchor" href="#supported-platforms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Platforms</h3>
+
+<ul>
+<li>Android</li>
+<li>iOS</li>
+</ul>
+
+<h2>
+<a id="camerarollsavetocameraroll" class="anchor" href="#camerarollsavetocameraroll" aria-hidden="true"><span class="octicon octicon-link"></span></a>CameraRoll.saveToCameraRoll</h2>
+
+<pre><code>window.cordova.plugins.CameraRoll.saveToCameraRoll(imageBase64, [successCallback], [errorCallback]);
+</code></pre>
+
+<h3>
+<a id="parameters-1" class="anchor" href="#parameters-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h3>
+
+<ul>
+<li>
+<strong>imageBase64</strong>: The base64-encoded data image URI that you want to save in the phone</li>
+<li>
+<strong>successCallback</strong>: (Optional) The success callback</li>
+<li>
+<strong>errorCallback</strong>: (Optional) The error callback</li>
+</ul>
+
+<h3>
+<a id="exemple-1" class="anchor" href="#exemple-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exemple</h3>
+
+<pre><code>var base64String = 'data:image/png;base64,iVBORw[...]A89ub';
+window.cordova.plugins.CamerRoll.saveToCameraRoll(base64String, function() {
+  // Do something
+}, function(err) {
+  console.log(err);
+});
+</code></pre>
+
+<h3>
+<a id="supported-platforms-1" class="anchor" href="#supported-platforms-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Platforms</h3>
+
+<ul>
+<li>iOS</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mlemainque">mlemainque</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
